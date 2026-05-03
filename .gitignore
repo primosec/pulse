@@ -1,0 +1,38 @@
+# Plano de desenvolvimento pessoal
+DEV_PLAN.md
+
+# Binários
+/pulse
+/bin/
+
+# Ambiente
+.env
+*.env.local
+
+# Go
+*.test
+*.out
+vendor/
+
+# Air (hot reload)
+tmp/
+
+# sqlc gerado
+internal/repository/db/
+
+# Swagger gerado
+docs/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
