@@ -347,27 +347,6 @@ GET /health                          { status: "ok", version: "...", uptime: "..
 }
 ```
 
----
-
-## Decisões que merecem atenção em entrevistas
-
-**Por que sqlc em vez de GORM?**
-sqlc gera código Go tipado a partir de SQL puro. Você escreve SQL real, o sqlc gera as funções. Sem reflexão em runtime, sem overhead de ORM, erros de query aparecem em tempo de compilação. Mais idiomático em Go.
-
-**Por que Asynq em vez de worker pool puro?**
-Worker pool puro em memória perde jobs ao reiniciar o processo. Asynq persiste jobs no Redis, suporta retries automáticos, deduplicação e tem uma UI de monitoramento. Para um sistema de monitoramento, perder um job de health check é um bug sério.
-
-**Por que coder/websocket em vez de gorilla/websocket?**
-O pacote gorilla/websocket foi arquivado pelo mantenedor em 2023. `coder/websocket` é um fork ativo com API compatível.
-
-**Como o uptime é calculado?**
-```
-uptime_pct = (checks com status 'up' nas últimas 24h / total de checks nas últimas 24h) * 100
-```
-Recalculado a cada check e armazenado diretamente no monitor para evitar agregações custosas na query do dashboard.
-
----
-
 ## O que este projeto demonstra
 
 | Habilidade | Como demonstrada |
