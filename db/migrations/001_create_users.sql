@@ -5,5 +5,5 @@ CREATE TABLE users (
     email TEXT UNIQUE NOT NULL,
     password TEXT NOT NULL,
     name TEXT NOT NULL,
-    created_at TIMESTAMPZ NOT NULL DEFAULT NOW()
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
