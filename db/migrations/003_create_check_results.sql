@@ -1,3 +1,4 @@
+-- +goose Up
 CREATE TABLE check_results (
     id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     monitor_id  UUID NOT NULL REFERENCES monitors(id) ON DELETE CASCADE,
